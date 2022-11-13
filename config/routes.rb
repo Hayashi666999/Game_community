@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   #devise_for :admins
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "public/homes#top"
-  devise_for :customers
 
+  devise_for :customers
   #devise_for :customers,skip: [:passwords], controllers: {
     #registrations: "public/registrations",
     #sessions: 'public/sessions'
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   namespace :public do
     resources :genres
     resources :post
+    get '/public/post_page' => 'past#post_page'
     get '/customers/mypage' => 'customers#show'
     get '/customers/information/edit' => 'customers#edit'
     patch '/customers/information' => 'customers#update'
