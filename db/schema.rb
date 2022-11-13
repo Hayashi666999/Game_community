@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_11_12_110656) do
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "like_list", null: false
+    t.string "like_list"
     t.boolean "is_active", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
