@@ -1,0 +1,22 @@
+<h1><%= @customer.nickname %>
+さんの会員情報編集</h1>
+<%= form_with model: @customer, url: admins_customer_path do |f| %>
+
+  <div class="field">
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <%= f.radio_button :payment_method, :is_active %>
+  <%= f.label :payment_method, "有効", {value: :is_active} %>
+  <%= f.radio_button :payment_method, :is_active %>
+  <%= f.label :payment_method, "退会", {value: :is_active} %>
+</br>
+  <%= f.submit "変更を保存",class:"btn btn-success" %>
+
+<% end %>

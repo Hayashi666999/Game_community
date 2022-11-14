@@ -1,1 +1,9 @@
-投稿ページ
+<h1>投稿ページ</h1>
+<% if user_signed_in? %>
+  <%= button_to "投稿", {controller: 'post', action: 'new'}, {method: :get} %>
+<% end %>
+
+<% @post_page.each do |post_page| %>
+  <span>投稿者：</span><%= post_page.current_customer.nickname %>
+  <%= post_page.body %>
+<% end %>
