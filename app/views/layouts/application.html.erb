@@ -13,7 +13,7 @@
     <header class="sticky-top">
       <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white">
         <a>
-          <%= link_to 'LOGO', root_path, data: {"turbolinks" => false} %>
+          <%= link_to 'TOP', root_path, data: {"turbolinks" => false} %>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
                 <%= link_to 'マイページ', public_customers_mypage_path,class: 'btn btn-light' %>
               </li>
               <li class="nav-item">
-                <%#= link_to '投稿一覧', public_items_path,class: 'btn btn-light' %>
+                <%= link_to '投稿一覧', public_post_index_path,class: 'btn btn-light' %>
               </li>
               <li class="nav-item">
                 <%#= link_to 'いいね一覧', public_cart_items_path,class: 'btn btn-light' %>
@@ -40,7 +40,7 @@
             <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
             <% else %>
               <li class="nav-item">
-                <%#= link_to '投稿一覧', public_items_path %>
+                <%= link_to '投稿一覧', public_post_index_path %>
               </li>
               <li class="nav-item">
                 <%= link_to "新規登録", new_customer_registration_path %>

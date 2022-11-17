@@ -5,16 +5,17 @@ class Public::PostController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:genre_id])
+    @post = Post.where(id: params[:id])
   end
 
   def post_page
     @post_page = Post.all
+    @post = Post.new
   end
 
   def create
     @post_page = Post.new(post_params)
-    @post_page = current_customer.id
+    @post_page.customer_id = current_customer.id
     if @post_page.save
       redirect_to public_post_page_path, flash: { notice: 'You have created book successfully.' }
     else
@@ -28,7 +29,7 @@ class Public::PostController < ApplicationController
 
 private
 def post_params
-  params.require(:post).permit(:genre_id,:nice,:title,:body)
+  params.require(:post).permit(:genre_id,:nice,:title,:body,:customer_id)
 end
 
 end

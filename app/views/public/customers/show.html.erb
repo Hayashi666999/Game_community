@@ -17,6 +17,9 @@
 <% end %>
 
 <% @post_page.each do |post_page| %>
-  <span>投稿者：</span><%= post_page.current_customer.nickname %>
+<% if current_customer %>
+  <span>投稿者：</span><%= post_page.create_customer.nickname %>
+  <%= post_page.title %>
   <%= post_page.body %>
+<% end %>
 <% end %>
