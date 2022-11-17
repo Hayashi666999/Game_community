@@ -25,19 +25,18 @@
                 <%= link_to 'マイページ', public_customers_mypage_path,class: 'btn btn-light' %>
               </li>
               <li class="nav-item">
-                <%#= link_to '投稿', public_items_path,class: 'btn btn-light' %>
+                <%#= link_to '投稿一覧', public_items_path,class: 'btn btn-light' %>
               </li>
               <li class="nav-item">
-                <%#= link_to 'いいね', public_cart_items_path,class: 'btn btn-light' %>
+                <%#= link_to 'いいね一覧', public_cart_items_path,class: 'btn btn-light' %>
               </li>
               <li class="nav-item">
                 <%= link_to "ログアウト", destroy_customer_session_path, method: :delete,class: 'btn btn-light' %>
               </li>
             <% elsif admin_signed_in? %>
-            <%= link_to '商品一覧', admin_items_path %>
+            <%= link_to '投稿一覧', admin_items_path %>
             <%= link_to '会員一覧', admin_customers_path %>
-            <%= link_to '注文履歴一覧', admin_path %>
-            <%= link_to 'ジャンル一覧', admin_genres_path %>
+            <%= link_to 'ジャンル一覧', admins_genres_path %>
             <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
             <% else %>
               <li class="nav-item">

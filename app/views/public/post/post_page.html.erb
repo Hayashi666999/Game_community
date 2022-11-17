@@ -1,9 +1,10 @@
 <h1>投稿ページ</h1>
-<% if user_signed_in? %>
-  <%= button_to "投稿", {controller: 'post', action: 'new'}, {method: :get} %>
-<% end %>
+<%= form_with url: public_post_index_path do |f| %>
+  <h4>タイトル</h4>
+  <%= f.text_field :title %>
 
-<% @post_page.each do |post_page| %>
-  <span>投稿者：</span><%= post_page.current_customer.nickname %>
-  <%= post_page.body %>
+  <h4>内容</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit '投稿',class:"btn btn-success" %>
 <% end %>

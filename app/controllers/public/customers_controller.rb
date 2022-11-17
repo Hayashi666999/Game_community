@@ -1,11 +1,15 @@
 class Public::CustomersController < ApplicationController
 
   def show
-
+    @post_page = Post.all
   end
 
   def edit
     @customer = current_customer
+  end
+
+  def post_page
+    @post_page = Post.all
   end
 
   def unsubscribe

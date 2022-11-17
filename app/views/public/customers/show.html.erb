@@ -10,3 +10,13 @@
     <td><%= current_customer.email %></td>
     </tr>
 </table>
+
+<h1>投稿ページ</h1>
+<% if customer_signed_in? %>
+  <%= button_to "投稿ページへ", public_post_page_path, method: :get %>
+<% end %>
+
+<% @post_page.each do |post_page| %>
+  <span>投稿者：</span><%= post_page.current_customer.nickname %>
+  <%= post_page.body %>
+<% end %>

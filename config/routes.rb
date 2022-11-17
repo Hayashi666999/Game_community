@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   namespace :public do
     resources :genres
     resources :post
-    get '/post_page' => 'past#post_page'
+    get '/post_page' => 'post#post_page'
     get '/customers/mypage' => 'customers#show'
     get '/customers/information/edit' => 'customers#edit'
     patch '/customers/information' => 'customers#update'
