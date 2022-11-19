@@ -16,10 +16,7 @@
   <%= button_to "投稿ページへ", public_post_page_path, method: :get %>
 <% end %>
 
-<% @post_page.each do |post_page| %>
-<% if current_customer %>
-  <span>投稿者：</span><%= post_page.create_customer.nickname %>
+<% @post_pages.each do |post_page| %>
   <%= post_page.title %>
   <%= post_page.body %>
-<% end %>
 <% end %>

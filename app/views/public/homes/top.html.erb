@@ -7,3 +7,10 @@
 <% @post.each do |posts| %>
 <%= posts.genre_id%>
 <% end %>
+
+<h1>投稿一覧</h1>
+<% @post.each do |posts| %>
+<%= posts.genre_id%>
+<%= link_to posts.title,public_post_path(posts) %>
+<%= posts.body%>
+<% end %>
