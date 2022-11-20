@@ -1,4 +1,15 @@
 <h1>投稿詳細</h1>
+
+<% if @post.nices?(current_customer) %>
+    <%= link_to post_nices_path(@post.id), method: :delete do %>
+        <span style="color:red;">❤︎</span>
+    <% end %>
+<% else %>
+    <%= link_to post_nices_path(@post.id), method: :post do %>
+        <span>❤︎</span>
+    <% end %>
+<% end %>
+
 <% @post.each do |posts| %>
 <%= posts.title %>
 <%= posts.body %>

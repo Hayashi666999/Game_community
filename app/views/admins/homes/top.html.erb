@@ -1,5 +1,5 @@
 <h1>会員一覧</h1>
 
 <% @customers.each do |customer| %>
-<%= customer.nickname %>
+<%= link_to customer.nickname, admins_customer_path(customer) %>
 <% end %>
