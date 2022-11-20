@@ -1,5 +1,6 @@
 <h1>投稿詳細</h1>
 
+<% if customer_signed_in? %>
 <% if @post.nices?(current_customer) %>
     <%= link_to post_nice_path(@post.id, @post.nices.find_by(customer: current_customer).id), method: :delete do %>
         <span style="color:red;">❤︎</span>
@@ -8,6 +9,7 @@
     <%= link_to post_nices_path(@post.id), method: :post do %>
         <span>❤︎</span>
     <% end %>
+<% end %>
 <% end %>
 
 <%= @post.title %>

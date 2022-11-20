@@ -33,13 +33,12 @@ class Public::PostController < ApplicationController
   end
 
 def search
-
    @section_title = "「#{params[:search]}」の検索結果"
    @post = if params[:search].present?
              Post.where(['title LIKE ?', "%#{params[:search]}%"])
                 # .paginate(page: params[:page], per_page: 12).recent
            else
-             redirect_to post_page_path
+             redirect_to root_path
            end
 end
 
