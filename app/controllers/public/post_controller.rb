@@ -26,6 +26,12 @@ class Public::PostController < ApplicationController
   end
 
 
+  def destroy
+    @post_page = Post.find(params[:id])
+    @post_page.destroy
+    redirect_to public_customers_mypage_path
+  end
+
 
 private
 def post_params

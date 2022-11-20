@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     sessions: "admins/sessions"
   }
 
+resources :posts do
+   resource :nices, only: [:create, :destroy]
+end
+
   namespace :admins do
     get '' => 'homes#top'
     resources :genres

@@ -8,12 +8,10 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     root_path
   end
-  def after_sign_out_path_for(resource)
-    root_path
-  end
+
 #管理者
   def after_sign_in_path_for(resource)
-    public_customers_mypage_path
+    admins_path
   end
   def after_sign_out_path_for(resource)
     admins_path
