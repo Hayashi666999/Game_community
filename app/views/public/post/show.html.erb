@@ -1,7 +1,7 @@
 <h1>投稿詳細</h1>
 
 <% if @post.nices?(current_customer) %>
-    <%= link_to post_nices_path(@post.id), method: :delete do %>
+    <%= link_to post_nice_path(@post.id, @post.nices.find_by(customer: current_customer).id), method: :delete do %>
         <span style="color:red;">❤︎</span>
     <% end %>
 <% else %>
@@ -10,8 +10,6 @@
     <% end %>
 <% end %>
 
-<% @post.each do |posts| %>
-<%= posts.title %>
-<%= posts.body %>
-<% end %>
+<%= @post.title %>
+<%= @post.body %>
 話せる場所

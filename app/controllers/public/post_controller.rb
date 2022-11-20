@@ -5,7 +5,7 @@ class Public::PostController < ApplicationController
   end
 
   def show
-    @post = Post.where(id: params[:id])
+    @post = Post.find(params[:id])
   end
 
   def post_page
@@ -32,6 +32,16 @@ class Public::PostController < ApplicationController
     redirect_to public_customers_mypage_path
   end
 
+def search
+
+   @section_title = "「#{params[:search]}」の検索結果"
+   @post = if params[:search].present?
+             Post.where(['title LIKE ?', "%#{params[:search]}%"])
+                # .paginate(page: params[:page], per_page: 12).recent
+           else
+             redirect_to post_page_path
+           end
+end
 
 private
 def post_params

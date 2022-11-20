@@ -46,8 +46,12 @@ ActiveRecord::Schema.define(version: 2022_11_19_151547) do
   end
 
   create_table "nices", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_nices_on_customer_id"
+    t.index ["post_id"], name: "index_nices_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -60,4 +64,6 @@ ActiveRecord::Schema.define(version: 2022_11_19_151547) do
     t.integer "customer_id"
   end
 
+  add_foreign_key "nices", "customers"
+  add_foreign_key "nices", "posts"
 end

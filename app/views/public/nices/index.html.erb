@@ -1,0 +1,4 @@
+<h1>いいね一覧</h1>
+<% @nices.each do |nice| %>
+<%= link_to nice.post.title, public_post_path(nice.post_id) %>
+<% end %>
