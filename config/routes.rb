@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     sessions: "admins/sessions"
   }
 
+
   resources :posts do
     resources :nices, only:[:create, :destroy], controller: 'public/nices'
   end
@@ -23,9 +24,11 @@ Rails.application.routes.draw do
     get '' => 'homes#top'
     resources :genres
     resources :customers
+    resources :posts
   end
 
   namespace :public do
+    post 'posts/create' => 'post#create', as: :post_create
     resources :genres
     resources :post do
       get :search, on: :collection

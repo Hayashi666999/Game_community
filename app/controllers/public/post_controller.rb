@@ -6,6 +6,7 @@ class Public::PostController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @newpost = Post.new(:id => params[:id])
   end
 
   def post_page
@@ -25,6 +26,14 @@ class Public::PostController < ApplicationController
     end
   end
 
+  # def 
+  #   @post = Post.new(params[:post].permit(:customer_id, :title, :body))
+  #   @post.save
+  #   puts "==========="
+  #   puts @post.id
+  #   redirect_to public_post_path(@post_page.id)
+  # end
+
 
   def destroy
     @post_page = Post.find(params[:id])
@@ -36,7 +45,6 @@ def search
    @section_title = "「#{params[:search]}」の検索結果"
    @post = if params[:search].present?
              Post.where(['title LIKE ?', "%#{params[:search]}%"])
-                # .paginate(page: params[:page], per_page: 12).recent
            else
              redirect_to root_path
            end
