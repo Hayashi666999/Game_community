@@ -12,6 +12,8 @@ end
 
 def destroy
   @post_nice = Nice.find_by(customer_id: current_customer.id, post_id: params[:post_id])
+  pp '----------'
+  pp @post_nice
   @post_nice.destroy
   redirect_to public_post_path(params[:post_id])
 end

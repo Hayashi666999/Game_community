@@ -2,11 +2,11 @@
 
 <% if customer_signed_in? %>
 <% if @post.nices?(current_customer) %>
-    <%= link_to post_nice_path(@post.id, @post.nices.find_by(customer: current_customer).id), method: :delete do %>
+    <%= link_to post_nices_path(@post), method: :delete do %>
         <span style="color:red;">❤︎</span>
     <% end %>
 <% else %>
-    <%= link_to post_nices_path(@post.id), method: :post do %>
+    <%= link_to post_nices_path(@post), method: :post do %>
         <span>❤︎</span>
     <% end %>
 <% end %>
@@ -16,12 +16,30 @@
 <%= @post.body %>
 
 <h3>新規書き込み</h3>
-<%= form_for @newpost, :url => public_post_create_path do |f| %>
-  <p>お名前</p>
-  <p><%= f.text_field :title %></p>
+<%= form_with model: @comment, url: public_post_comments_path(@post), method: :post do |f| %>
   <p>本文</p>
   <p><%= f.text_area :body %></p>
-  <%= f.hidden_field :customer_id %>
-
   <%= f.submit %>
+<% end %>
+
+<% @post.comments.reverse.each do |comment| %>
+    <div>
+        <div class="nickname" style="margin-top: 10px;">
+            <span style="background-color: #f0f0f0; padding: 10px; border: 1px solid #000;">
+                <%= comment.customer.nickname %>
+            </span>
+        </div>
+        <div class="comment">
+            <%= simple_format(comment.body) %>
+        </div>
+        <div class="timestamp">
+            <small>
+                <%= comment.created_at.in_time_zone('Tokyo').strftime("%Y年%m月%d日 %H:%M") %>
+            </small>
+        </div>
+        <% if comment.customer_id == current_customer.id %>
+            <%= link_to '削除', public_post_comment_path(@post, comment), method: :delete%>
+        <% end %>
+    </div>
+    <hr>
 <% end %>

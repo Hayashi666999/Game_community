@@ -6,7 +6,8 @@ class Public::PostController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @newpost = Post.new(:id => params[:id])
+    # @newpost = Post.new(:id => params[:id])
+    @comment = Comment.new
   end
 
   def post_page
@@ -24,15 +25,14 @@ class Public::PostController < ApplicationController
     @post_page = Post.all
       render :index
     end
-  end
 
-  # def 
-  #   @post = Post.new(params[:post].permit(:customer_id, :title, :body))
-  #   @post.save
-  #   puts "==========="
-  #   puts @post.id
-  #   redirect_to public_post_path(@post_page.id)
-  # end
+
+    # @post = Post.new(params[:post].permit(:customer_id, :title, :body))
+    # @post.save
+    # puts "==========="
+    # puts @post.id
+    # redirect_to public_post_path(@post_page.id)
+  end
 
 
   def destroy

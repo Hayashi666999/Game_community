@@ -9,5 +9,6 @@ class Customer < ApplicationRecord
 
 has_many :nices, dependent: :destroy
 has_many :likes, through: :nices, source: :post
+has_many :comments, dependent: :destroy
 
 end

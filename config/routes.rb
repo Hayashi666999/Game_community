@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
 
   resources :posts do
-    resources :nices, only:[:create, :destroy], controller: 'public/nices'
+    resource :nices, only:[:create, :destroy], controller: 'public/nices'
   end
 
   namespace :admins do
@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     resources :genres
     resources :post do
       get :search, on: :collection
+      resources :comments, only: [:index, :create, :destroy]
     end
     resources :nices, only: [:index]
     get '/post_page' => 'post#post_page'
