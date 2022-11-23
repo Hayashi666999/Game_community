@@ -3,22 +3,22 @@
 <% if customer_signed_in? %>
 <% if @post.nices?(current_customer) %>
     <%= link_to post_nices_path(@post), method: :delete do %>
-        <span style="color:red;">❤︎</span>
+        <span style="color:red;">❤</span>
     <% end %>
 <% else %>
     <%= link_to post_nices_path(@post), method: :post do %>
-        <span>❤︎</span>
+        <span style="color:black;">💙</span>
     <% end %>
 <% end %>
 <% end %>
 
 <%= @post.title %>
-<%= @post.body %>
+<%= simple_format(@post.body) %>
 
 <h3>新規書き込み</h3>
 <%= form_with model: @comment, url: public_post_comments_path(@post), method: :post do |f| %>
-  <p>本文</p>
-  <p><%= f.text_area :body %></p>
+  <p>コメント</p>
+  <p><%= f.text_area :body, placeholder: "コメントを投稿する..." %></p>
   <%= f.submit %>
 <% end %>
 

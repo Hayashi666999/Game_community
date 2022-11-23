@@ -6,8 +6,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
 
 def nices?(customer)
-   #nices.where(customer_id: customer.id).exists?
-   likes.exists?
+   nices.where(customer_id: customer.id).exists?
 end
 
 end

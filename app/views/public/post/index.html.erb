@@ -2,5 +2,5 @@
 <% @post.each do |posts| %>
 <%= posts.genre_id%>
 <%= link_to posts.title,public_post_path(posts) %>
-<%= posts.body%>
+<%= simple_format(posts.body) %>
 <% end %>
