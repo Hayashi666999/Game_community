@@ -2,7 +2,7 @@ class Admins::CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
-    
+
   end
 
   def edit
@@ -12,7 +12,7 @@ class Admins::CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     @customer.update(customer_params)
-    redirect_to admins_customer_path
+    redirect_to admins_customer_path(params[:id])
   end
 
   private

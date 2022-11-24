@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2022_11_22_120923) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "customer_id"
+    # t.boolean "post_history", default: true, null: false
   end
 
   add_foreign_key "nices", "customers"

@@ -6,6 +6,11 @@ class Admins::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = Comment.all
+  end
+
+  def post_history
+    @post = Post.all
   end
 
   def destroy
@@ -13,5 +18,13 @@ class Admins::PostsController < ApplicationController
     @post.destroy
     redirect_to admins_posts_path
   end
+
+  # def update
+  # booleanがtrueの場合
+  # @post = Post.find(params[:id])
+  # if @post.post_history == true
+  #   @post.post_history = false
+  # redirect_to admins_posts_path
+  # end
 
 end

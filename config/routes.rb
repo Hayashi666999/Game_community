@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     resources :genres
     resources :customers
     resources :posts
+    resources :comments, only: [:index, :destroy]
+    get '/post_history' => 'post#post_history'
   end
 
   namespace :public do

@@ -1,6 +1,12 @@
+<div class="container">
+  <div class="box">
+
 <h1>投稿一覧</h1>
 <% @post.each do |posts| %>
 <%= posts.genre_id%>
 <%= link_to posts.title,public_post_path(posts) %>
 <%= simple_format(posts.body) %>
 <% end %>
+
+  </div>
+</div>

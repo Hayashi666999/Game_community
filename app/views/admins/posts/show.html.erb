@@ -1,4 +1,15 @@
+<div class="container">
+  <div class="box">
+
 <h1>投稿詳細管理</h1>
 <%= @post.title %>
 <%= @post.body %>
 
+
+<% @comments.each do |comment| %>
+<%= comment.body %>
+<%= link_to '削除', admins_comment_path(@post, comment), method: :delete%>
+<% end %>
+
+  </div>
+</div>

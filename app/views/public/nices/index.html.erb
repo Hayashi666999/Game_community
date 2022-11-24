@@ -1,4 +1,10 @@
+<div class="container">
+  <div class="box">
+
 <h1>いいね一覧</h1>
 <% @nices.each do |nice| %>
-<%= link_to nice.post.title, public_post_path(nice.post_id) %>
+ <div style="width: 50%;    text-align: left;" >><%= link_to nice.post.title, public_post_path(nice.post_id) %></div>
 <% end %>
+
+  </div>
+</div>
