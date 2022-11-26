@@ -5,9 +5,10 @@ class Admins::CommentsController < ApplicationController
   end
 
   def destroy
-    comment = Comment.all
-    comment.destroy if comment == current_customer
-    redirect_to admins_post_path(params[:id])
+    comment = Comment.find(params[:id])
+    @post = comment.post_id
+    comment.destroy
+    redirect_to admins_post_path(@post)
   end
 
   private

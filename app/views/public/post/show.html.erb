@@ -18,11 +18,13 @@
 <%= @post.title %>
 <%= simple_format(@post.body) %>
 
-<h3>新規書き込み</h3>
-<%= form_with model: @comment, url: public_post_comments_path(@post), method: :post do |f| %>
-  <p>コメント</p>
-  <p><%= f.text_area :body, placeholder: "コメントを投稿する..." %></p>
-  <%= f.submit %>
+<% if customer_signed_in? %>
+  <h3>新規書き込み</h3>
+    <%= form_with model: @comment, url: public_post_comments_path(@post), method: :post do |f| %>
+      <p>コメント</p>
+      <p><%= f.text_area :body, placeholder: "コメントを投稿する..." %></p>
+      <%= f.submit %>
+    <% end %>
 <% end %>
 
 <% @post.comments.reverse.each do |comment| %>
@@ -40,7 +42,7 @@
                 <%= comment.created_at.in_time_zone('Tokyo').strftime("%Y年%m月%d日 %H:%M") %>
             </small>
         </div>
-        <% if comment.customer_id == current_customer.id %>
+        <% if customer_signed_in? and comment.customer_id == current_customer.id %>
             <%= link_to '削除', public_post_comment_path(@post, comment), method: :delete%>
         <% end %>
     </div>

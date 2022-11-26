@@ -8,7 +8,7 @@
 
 <% @comments.each do |comment| %>
 <%= comment.body %>
-<%= link_to '削除', admins_comment_path(@post, comment), method: :delete%>
+<%= link_to '削除', admins_comment_path(comment), method: :delete%>
 <% end %>
 
   </div>

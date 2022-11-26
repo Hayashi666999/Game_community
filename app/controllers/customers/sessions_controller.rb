@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
-class Customers::SessionsController < Devise::SessionsController
+class Public::CustomersController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
+
+
+
+end
   # GET /resource/sign_in
   # def new
   #   super

@@ -6,7 +6,7 @@ class Admins::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = Comment.all
+    @comments = @post.comments
   end
 
   def post_history
