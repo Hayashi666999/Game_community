@@ -1,36 +1,36 @@
 <div class="container">
-  <div class="box">
+<div class="raw">
+  <div class="box1">
 
 <h1>投稿詳細</h1>
-
+<div class="text-right">
 <% if customer_signed_in? %>
 <% if @post.nices?(current_customer) %>
     <%= link_to post_nices_path(@post), method: :delete do %>
-        <span style="color:red;">❤</span>
+        <span style="font-size: 50px;">❤</span>
     <% end %>
 <% else %>
     <%= link_to post_nices_path(@post), method: :post do %>
-        <span style="color:black;">💙</span>
+        <span style="color:black;">🖤</span>
     <% end %>
 <% end %>
 <% end %>
-
-<%= @post.title %>
-<%= simple_format(@post.body) %>
+</div>
+<br>
+<div style="font-size: 50px;"><%= @post.title %></div>
+<div style="font-size: 20px;"><%= simple_format(@post.body) %></div>
 
 <% if customer_signed_in? %>
-  <h3>新規書き込み</h3>
     <%= form_with model: @comment, url: public_post_comments_path(@post), method: :post do |f| %>
-      <p>コメント</p>
-      <p><%= f.text_area :body, placeholder: "コメントを投稿する..." %></p>
-      <%= f.submit %>
+      <p style="font-size: 20px;"><%= f.text_area :body, placeholder: "コメントを投稿する..." %></p>
+      <%= f.submit "コメントを投稿" %>
     <% end %>
 <% end %>
 
 <% @post.comments.reverse.each do |comment| %>
-    <div>
-        <div class="nickname" style="margin-top: 10px;">
-            <span style="background-color: #f0f0f0; padding: 10px; border: 1px solid #000;">
+    <div class="comment_in">
+        <div class="nickname">
+            <span >
                 <%= comment.customer.nickname %>
             </span>
         </div>
@@ -43,11 +43,11 @@
             </small>
         </div>
         <% if customer_signed_in? and comment.customer_id == current_customer.id %>
-            <%= link_to '削除', public_post_comment_path(@post, comment), method: :delete%>
+            <div class="link_delete"><%= link_to '削除', public_post_comment_path(@post, comment), method: :delete %></div>
         <% end %>
     </div>
-    <hr>
 <% end %>
 
   </div>
+</div>
 </div>

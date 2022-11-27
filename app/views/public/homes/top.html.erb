@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="box">
+  <div class="box1">
+    
 
     <h1>Game_Community</h1>
     <p>ようこそ</p>
@@ -15,11 +16,11 @@
     </div>
     
     <h1 style="margin-top: 30px;">投稿一覧</h1>
-    <div style="display: flex;">
+    <div class="top">
       <% @post.each do |posts| %>
         <%= posts.genre_id%>
     
-         <div style="width: 100%;    text-align: center;" ><%= link_to posts.title,public_post_path(posts) %></div>
+         <div class="top_in">＞<%= link_to posts.title,public_post_path(posts) %></div>
       <% end %>
       </div>
   </div>

@@ -1,30 +1,33 @@
 <div class="container">
-  <div class="box">
+  <div class="box2">
 
-<h1>マイページ</h1>
-<p>登録情報</p><%= link_to "編集する",public_customers_information_edit_path,class:"btn btn-success" %>
-<table class="table table-bordered">
+    <h1>マイページ</h1>
+    <p>登録情報</p>
+  <table class="table table-bordered">
     <tr>
-    <th>ニックネーム</th>
-    <td><%= current_customer.nickname %></td>
+     <th>ニックネーム</th>
+     <td><%= current_customer.nickname %></td>
     </tr>
     <tr>
-    <th>メールアドレス</th>
-    <td><%= current_customer.email %></td>
+     <th>メールアドレス</th>
+     <td><%= current_customer.email %></td>
     </tr>
-</table>
-
-<h1>投稿ページ</h1>
-<% if customer_signed_in? %>
-  <%= button_to "投稿ページへ", public_post_page_path, method: :get %>
-<% end %>
-
-<% @post_pages.each do |post_page| %>
-  <%= link_to post_page.title,public_post_path(post_page) %>
-  <%= simple_format(post_page.body) %>
-  <%= link_to "投稿削除", public_post_path(post_page.id), method: :delete, "data-confirm" => "本当に削除しますか？",class:"btn btn-danger" %>
-  <br>
-<% end %>
-
+  </table>
+  <div><%= link_to "編集する",public_customers_information_edit_path,class:"btn btn-success" %></div>
+    <div class="box_out">
+    <h1>投稿ページ</h1>
+    <% if customer_signed_in? %>
+    <%= button_to "投稿ページへ", public_post_page_path, method: :get %>
+    <% end %>
+    </div>
+    <div class="box_in">
+    <% @post_pages.each do |post_page| %>
+    <div class="box_on">
+    <%= link_to post_page.title,public_post_path(post_page) %>
+    <%= simple_format(post_page.body) %>
+    <%= link_to "投稿削除", public_post_path(post_page.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+    </div>
+    <% end %>
   </div>
+ </div>
 </div>

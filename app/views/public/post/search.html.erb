@@ -1,14 +1,21 @@
 <div class="container">
-  <div class="box">
-
-
+  <div class="raw">
+  <div class="box2">
+    <div class="box_out">
 <h1>検索結果</h1>
+</div>
+<div class="box_in">
 <% @post.each do |posts| %>
-<%= link_to posts.title,public_post_path(posts) %>
+<div class="box_on">
+<%= link_to posts.title,public_post_path(posts) %><br>
 <%= posts.body %>
+</div>
 <% end %>
-<%= link_to '一覧に戻る', public_post_index_path %>
-<%= link_to 'ホームに戻る', root_path %>
-
+</div>
+<div class="box_out">
+<%= link_to '一覧に戻る', public_post_index_path,class:"btn btn-success" %>
+<%= link_to 'ホームに戻る', root_path,class:"btn btn-success" %>
+</div>
   </div>
+</div>
 </div>

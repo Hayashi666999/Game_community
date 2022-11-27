@@ -1,9 +1,77 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
-
-.box {
-  width: 50%;
-  
+.box1 {
+  width: 60%;
   margin: 20px auto;
+  text-align: center;
+}
+.box2 {
+  width: 70%;
+  margin: 20px auto;
+  .box_in{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+    .box_on{
+    width: 40%;
+    text-align: left;
+    margin-bottom: 20px;
+    }
+  }
+}
+.box_out{
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.box_out2{
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+  margin-top: 130px;
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .top_in {
+    width: 40%;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+}
+.nickname {
+    margin-top: 20px;
+    background-color: #e9ecef;
+    padding: 5px;
+    border: 1px solid #000;
+    width: 20%;
+}
+.comment_in{
+  background-color: #e9ecef;
+}
+
+.link_delete{
+  color: red;
+}
+
+
+.wrapper{
+    min-height: 100vh;
+    position: relative;/*←相対位置*/
+    padding-bottom: 120px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
+footer{
+    width: 100%;
+    background-color: #0f2e51;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
 }
