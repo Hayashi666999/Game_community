@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="box">
+  <div class="box1">
 
-<h2>ログイン</h2>
-<h3>会員の方はこちらからログイン</h3>
+<h2 style="margin-top: 70px;">ログイン</h2>
+<h4>会員の方はこちらからログイン</h4>
 <%= form_with model:@customer, url: customer_session_path do |f| %>
   <div class="field">
     <%= f.label "メールアドレス" %><br />
@@ -14,13 +14,14 @@
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
-  <div class="actions">
+  <div style="margin-top: 20px;">
     <%= f.submit "ログイン",class:"btn btn-primary" %>
   </div>
 <% end %>
-<p>会員登録がお済みではない方</p>
+<div class="login",style="text-align: left;">会員登録がお済みではない方は<br>
 <%= render "public/shared/links" %>
 <P>から新規登録を行ってください。</P>
+</div>
 
   </div>
 </div>

@@ -1,11 +1,16 @@
 <div class="container">
-  <div class="box">
-
-<h1>投稿一覧管理</h1>
-<% @post.each do |posts| %>
-<%= link_to posts.title, admins_post_path(posts) %>
-<%= link_to "投稿削除", admins_post_path(posts.id), method: :delete, "data-confirm" => "本当に削除しますか？",class:"btn btn-danger" %>
+  <div class="box2">
+<h1 style="text-align: center;">投稿一覧管理</h1>
+<div class="box_in">
+<% @post.each do |posts| %><br>
+<div class="box_on">
+  <div class="justify-content: center;">
+<%= link_to posts.title, admins_post_path(posts) %><br>
+<%= link_to "投稿削除", admins_post_path(posts.id), method: :delete, "data-confirm" => "本当に削除しますか？"%><br>
+</div>
+</div>
 <% end %>
+</div>
 
   </div>
 </div>

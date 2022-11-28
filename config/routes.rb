@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     #registrations: "public/registrations",
     #sessions: 'public/sessions'
   #}
+  devise_scope :customer do
+    get "/customers", to: 'devise/registrations#new'
+  end
+
 
   # 管理者用
   # URL /admin/sign_in ...

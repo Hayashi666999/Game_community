@@ -1,12 +1,17 @@
 <div class="container">
-  <div class="box1">
+  <div class="box2">
 
-<h1>会員一覧</h1>
-
+<h1 style="text-align: center;">会員一覧</h1>
+<div class="box_in">
 <% @customers.each do |customer| %>
+<div class="box_on">
+  <div class="justify-content: center;">
+<%= customer.id %>
 <%= link_to customer.nickname, admins_customer_path(customer) %>
-<%= customer.is_active ? '有効' : '退会' %>
+<%= customer.is_active ? '有効' : '退会' %><br>
+</div>
+</div>
 <% end %>
-
-  </div>
+</div>
+</div>
 </div>

@@ -18,11 +18,12 @@ class Public::PostController < ApplicationController
     @post_page = Post.new(post_params)
     @post_page.customer_id = current_customer.id
     if @post_page.save
-      redirect_to public_post_page_path, flash: { notice: 'You have created book successfully.' }
+      redirect_to public_customers_mypage_path, flash: { notice: 'You have created book successfully.' }
     else
-    @post_page = current_customer
-    @post_page = Post.all
-      render :index
+      @post = Post.all
+      @post_page = current_customer
+      @post_page = Post.all
+      redirect_to public_post_page_path
     end
 
   end

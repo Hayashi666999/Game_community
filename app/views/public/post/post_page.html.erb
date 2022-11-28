@@ -1,15 +1,14 @@
 <div class="container">
   <div class="box1">
 
-<h1>投稿ページ</h1>
+<h2 style="margin-top: 70px;">投稿ページ</h2>
 <%= form_with model:@post, url: public_post_index_path do |f| %>
-  <h4>タイトル</h4>
+  <h6 style="margin-top: 30px;">ゲームタイトル</h6>
   <%= f.text_field :title %>
 
-  <h4>内容</h4>
-  <%= f.text_area :body %>
-
-  <%= f.submit '投稿',class:"btn btn-success" %>
+  <h6 style="margin-top: 30px;">タイトル概要</h6>
+  <%= f.text_area :body %><br>
+  <div style="margin-top: 30px;"><%= f.submit '投稿',class:"btn btn-success" %></div
 <% end %>
 
   </div>

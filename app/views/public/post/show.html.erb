@@ -7,11 +7,11 @@
 <% if customer_signed_in? %>
 <% if @post.nices?(current_customer) %>
     <%= link_to post_nices_path(@post), method: :delete do %>
-        <span style="font-size: 50px;">❤</span>
+        <span style="font-size: 50px;">⭐️</span>
     <% end %>
 <% else %>
     <%= link_to post_nices_path(@post), method: :post do %>
-        <span style="color:black;">🖤</span>
+        <span style="font-size: 50px;">☆</span>
     <% end %>
 <% end %>
 <% end %>

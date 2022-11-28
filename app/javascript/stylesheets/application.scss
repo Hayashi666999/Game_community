@@ -1,18 +1,30 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+.sign_in{
+  margin-top: 40px;
+  font-size: 15px;
+  text-align: left;
+}
+.login{
+  margin-top: 40px;
+  font-size: 15px;
+  text-align: left;
+}
+
 .box1 {
   width: 60%;
   margin: 20px auto;
   text-align: center;
 }
+
 .box2 {
   width: 70%;
   margin: 20px auto;
   .box_in{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
     .box_on{
     width: 40%;
     text-align: left;
@@ -20,6 +32,7 @@
     }
   }
 }
+
 .box_out{
   width: 50%;
   margin: 20px auto;
@@ -37,13 +50,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
   .top_in {
     width: 40%;
     text-align: left;
     margin-bottom: 20px;
   }
 }
+
 .nickname {
     margin-top: 20px;
     background-color: #e9ecef;
@@ -59,6 +72,9 @@
   color: red;
 }
 
+.devise-error-messages {
+  color: red;
+}
 
 .wrapper{
     min-height: 100vh;
