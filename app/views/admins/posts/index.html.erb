@@ -6,7 +6,7 @@
 <div class="box_on">
   <div class="justify-content: center;">
 <%= link_to posts.title, admins_post_path(posts) %><br>
-<%= link_to "投稿削除", admins_post_path(posts.id), method: :delete, "data-confirm" => "本当に削除しますか？"%><br>
+<%= link_to "投稿削除", admins_post_path(posts.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "link_delete"%><br>
 </div>
 </div>
 <% end %>

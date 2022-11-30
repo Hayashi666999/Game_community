@@ -43,7 +43,7 @@
             </small>
         </div>
         <% if customer_signed_in? and comment.customer_id == current_customer.id %>
-            <div class="link_delete"><%= link_to '削除', public_post_comment_path(@post, comment), method: :delete %></div>
+            <%= link_to '削除', public_post_comment_path(@post, comment), method: :delete, class: "link_delete" %>
         <% end %>
     </div>
 <% end %>

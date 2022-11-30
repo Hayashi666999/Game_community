@@ -25,7 +25,7 @@
     <div class="box_on">
     <%= link_to post_page.title,public_post_path(post_page) %>
     <%= simple_format(post_page.body) %>
-    <%= link_to "投稿削除", public_post_path(post_page.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+    <%= link_to "投稿削除", public_post_path(post_page.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "link_delete" %>
     </div>
     <% end %>
   </div>
