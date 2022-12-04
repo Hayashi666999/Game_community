@@ -7,6 +7,14 @@ body {
   color: white;
 }
 
+.about{
+  background-color: rgba( 255, 255, 255, 0.6 );
+}
+
+.black{
+  color: black;
+}
+
 .link{
 -webkit-text-stroke-width: 2px;
 -webkit-text-stroke-color: blue;
@@ -95,6 +103,11 @@ body {
 
 .devise-error-messages {
   color: red;
+}
+
+.box3 {
+  width: 55%;
+  margin: 20px auto;
 }
 
 .wrapper{
