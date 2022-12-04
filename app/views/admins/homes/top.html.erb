@@ -1,17 +1,25 @@
 <div class="container">
+  <div class="raw">
   <div class="box2">
 
 <h1 style="text-align: center;">会員一覧</h1>
 <div class="box_in">
+<table class="table table-bordered">
+<tr><th style="color: white;">会員番号</th>
+<th style="color: white;">会員の名前</th>
+<th style="color: white;">有効or退会</th></tr>
 <% @customers.each do |customer| %>
 <div class="box_on">
-  <div class="justify-content: center;">
-<%= customer.id %>
-<%= link_to customer.nickname, admins_customer_path(customer) %>
-<%= customer.is_active ? '有効' : '退会' %><br>
+<div class="justify-content: center;">
+<tr><td style="color: white;"><%= customer.id %></td>
+<td style="color: white;"><%= link_to customer.nickname, admins_customer_path(customer) %></td>
+<td style="color: white;"><%= customer.is_active ? '有効' : '退会' %></td></tr>
 </div>
 </div>
 <% end %>
+</table>
+
+</div>
 </div>
 </div>
 </div>

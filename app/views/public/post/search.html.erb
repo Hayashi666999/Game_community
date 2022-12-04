@@ -2,12 +2,12 @@
   <div class="raw">
   <div class="box2">
     <div class="box_out">
-<h1>検索結果</h1>
+<h1 style="margin-bottom: 70px;">検索結果</h1>
 </div>
 <div class="box_in">
 <% @post.each do |posts| %>
 <div class="box_on">
-<%= link_to posts.title,public_post_path(posts) %><br>
+<div class="link"><%= link_to posts.title,public_post_path(posts) %></div><br>
 <%= posts.body %>
 </div>
 <% end %>

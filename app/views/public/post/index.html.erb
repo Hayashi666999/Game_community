@@ -12,7 +12,7 @@
 <% @post.each do |posts| %>
 <div style="text-align: -webkit-left;">
 <%= posts.genre_id%>
-<%= link_to posts.title,public_post_path(posts) %>
+<div class="link"><%= link_to posts.title,public_post_path(posts) %></div>
 <%= simple_format(posts.body) %></div>
 <% end %>
 </div>

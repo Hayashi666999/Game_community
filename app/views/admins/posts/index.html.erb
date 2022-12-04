@@ -2,14 +2,16 @@
   <div class="box2">
 <h1 style="text-align: center;">投稿一覧管理</h1>
 <div class="box_in">
+  <table class="table table-bordered">
 <% @post.each do |posts| %><br>
 <div class="box_on">
   <div class="justify-content: center;">
-<%= link_to posts.title, admins_post_path(posts) %><br>
-<%= link_to "投稿削除", admins_post_path(posts.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "link_delete"%><br>
+<tr><td style="color: white;"><%= link_to posts.title, admins_post_path(posts) %></td>
+<td style="color: white;"><%= link_to "投稿削除", admins_post_path(posts.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "link_delete"%></td>
 </div>
 </div>
 <% end %>
+</table>
 </div>
 
   </div>

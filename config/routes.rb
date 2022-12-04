@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
+
     get '' => 'homes#top'
     resources :genres
     resources :customers
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
+    get '/about' => 'homes#about'
     post 'posts/create' => 'post#create', as: :post_create
     resources :genres
     resources :post do

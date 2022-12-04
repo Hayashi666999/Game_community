@@ -1,14 +1,15 @@
-<h1><%= @customer.nickname %>
+<div style="text-align: center;">
+<h1 style="margin-top: 140px;"><%= @customer.nickname %>
 さんの会員情報編集</h1>
 <%= form_with model: @customer, url: admins_customer_path do |f| %>
 
   <div class="field">
-    <%= f.label :nickname %>
+    <%= f.label :nickname %><br>
     <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %>
+    <%= f.label :email %><br>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -20,3 +21,4 @@
   <%= f.submit "変更を保存",class:"btn btn-success" %>
 
 <% end %>
+</div>

@@ -6,9 +6,9 @@
   <h6 style="margin-top: 30px;">ゲームタイトル</h6>
   <%= f.text_field :title %>
 
-  <h6 style="margin-top: 30px;">タイトル概要</h6>
-  <%= f.text_area :body %><br>
-  <div style="margin-top: 30px;"><%= f.submit '投稿',class:"btn btn-success" %></div
+  <h6 style="margin-top: 30px;">話し合いたい概要</h6>
+  <%= f.text_area :body, rows:4, placeholder: "例：１章の攻略方法を知りたい又は◯◯キャラについて語りたい...など" %><br>
+  <div style="margin-top: 30px;"><%= f.submit '投稿',class:"btn btn-success" %></div>
 <% end %>
 
   </div>

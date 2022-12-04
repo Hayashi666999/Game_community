@@ -1,5 +1,6 @@
 <div class="container">
   <div class="box1">
+    <div class="edit_in">
 
 <h1>会員情報編集</h1>
 <%= form_with model: @customer, url: public_customers_information_path do |f| %>
@@ -21,4 +22,5 @@
 <%= link_to "退会する", public_customers_unsubscribe_confirm_path,class:"btn btn-danger" %>
   </div>
   </div>
+</div>
 </div>

@@ -1,21 +1,21 @@
 <div class="container">
   <div class="box2">
-
+<div class="box_out">
     <h1>マイページ</h1>
     <p>登録情報</p>
   <table class="table table-bordered">
     <tr>
-     <th>ニックネーム</th>
-     <td><%= current_customer.nickname %></td>
+     <th style="color: white;">ニックネーム</th>
+     <td style="color: white;"><%= current_customer.nickname %></td>
     </tr>
     <tr>
-     <th>メールアドレス</th>
-     <td><%= current_customer.email %></td>
+     <th style="color: white;">メールアドレス</th>
+     <td style="color: white;"><%= current_customer.email %></td>
     </tr>
   </table>
   <div><%= link_to "編集する",public_customers_information_edit_path,class:"btn btn-success" %></div>
-    <div class="box_out">
-    <h1>投稿ページ</h1>
+
+    <h1 style="margin-top: 30px;">投稿ページ</h1>
     <% if customer_signed_in? %>
     <%= button_to "投稿ページへ", public_post_page_path, method: :get %>
     <% end %>
@@ -23,7 +23,7 @@
     <div class="box_in">
     <% @post_pages.each do |post_page| %>
     <div class="box_on">
-    <%= link_to post_page.title,public_post_path(post_page) %>
+    <div class="link"><%= link_to post_page.title,public_post_path(post_page) %></div>
     <%= simple_format(post_page.body) %>
     <%= link_to "投稿削除", public_post_path(post_page.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "link_delete" %>
     </div>

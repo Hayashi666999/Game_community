@@ -6,7 +6,7 @@
 <div class="box_in">
 <% @nices.each do |nice| %>
 <div class="box_on">
- <div>><%= link_to nice.post.title, public_post_path(nice.post_id) %></div>
+<div class="link">><%= link_to nice.post.title, public_post_path(nice.post_id) %></div>
 </div>
 <% end %>
 </div>
