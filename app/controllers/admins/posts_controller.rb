@@ -19,12 +19,4 @@ class Admins::PostsController < ApplicationController
     redirect_to admins_posts_path
   end
 
-  # def update
-  # booleanがtrueの場合
-  # @post = Post.find(params[:id])
-  # if @post.post_history == true
-  #   @post.post_history = false
-  # redirect_to admins_posts_path
-  # end
-
 end
