@@ -21,7 +21,6 @@ class Public::PostController < ApplicationController
       redirect_to public_customers_mypage_path, flash: { notice: 'You have created book successfully.' }
     else
       @post = Post.all
-      @post_page = current_customer
       @post_page = Post.all
       redirect_to public_post_page_path
     end
@@ -30,8 +29,8 @@ class Public::PostController < ApplicationController
 
 
   def destroy
-    @post_page = Post.find(params[:id])
-    @post_page.destroy
+    post_page = Post.find(params[:id])
+    post_page.destroy
     redirect_to public_customers_mypage_path
   end
 
